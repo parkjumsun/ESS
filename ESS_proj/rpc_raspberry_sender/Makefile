@@ -1,0 +1,11 @@
+obj-m := rpc_raspberry_sender.o
+KERNELDIR := /lib/modules/$(shell uname -r)/build
+PWD :=  $(shell pwd)
+
+default:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	gcc rpc_raspberry_sender_lib.c -o rpc_raspberry_sender
+clean:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
+
+	

@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/src/linux-headers-5.4.0-147-generic/arch/x86/include",
+                "/usr/src/linux-headers-5.4.0-147-generic/include",
+                "/usr/src/linux-headers-5.4.0-147-generic/arch/x86/include/uapi",
+                "/usr/src/linux-headers-5.4.0-147-generic/include/uapi",
+                "/usr/src/linux-headers-5.4.0-147-generic/include/generated/uapi",
+                "/usr/src/linux-headers-5.4.0-147-generic/ubuntu/include",
+                "/usr/lib/gcc/aarch64-linux-gnu/9/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-arm64"
+        }
+    ],
+    "version": 4
+}
