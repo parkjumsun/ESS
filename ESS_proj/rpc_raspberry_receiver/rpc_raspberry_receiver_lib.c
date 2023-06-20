@@ -6,9 +6,10 @@
 #include <unistd.h>
 
 
+int fd;
 
 int init_rpc(unsigned long portnum){
-    int fd = open("/dev/rpc_raspberry_receiver", O_RDWR);
+    fd = open("/dev/rpc_raspberry_receiver", O_RDWR);
     if(fd < 0)
         return -1;
     unsigned long portnum_lib = portnum;
@@ -17,13 +18,17 @@ int init_rpc(unsigned long portnum){
 }
 
 int wating_from_sender(int fd){
-    return ioctl(fd, WAIT_CONNECTION, NULL);
+    int ret = ioctl(fd, WAIT_CONNECTION, NULL);
+    return ret;
 }
 
 
 int main(int argc, char const *argv[])
 {   
     int fd = init_rpc(700);
-    wating_from_sender(fd);
+    while(1){
+        wating_from_sender(fd);
+    }
+    close(fd);
     return 0;
 }
